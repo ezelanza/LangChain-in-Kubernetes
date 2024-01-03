@@ -5,6 +5,7 @@ This repository is intented to share a Kubernetes implementation for a RAG chatb
 2. The vector database used is FAISS. 
 3. It was built using LangChain 
 4. The front end is a REACT application
+![image](LangChain-in-Kubernetes/Images/diagram.png) 
 
 This is a reference implementation of a question answering for a RAG implementation using Langchain
 
@@ -33,7 +34,7 @@ You should now be able to see both containers on your environment.
 ```{python}
     docker run -p 3000:3000 front_end:latest
 
-    docker run -p 8000:8000 front_end:latest
+    docker run -p 8000:8000 chat:latest
 ```
 This command will start both containers at each port. Front end will be using port 3000 and the back_end service will run on port 8000.
 
@@ -72,10 +73,15 @@ NOTE: This step can take a while depending on your hardware specifications.
             --alpha 0.5 \
             --output_dir "saved_results" 
     ```
-
+5. You will find on saved_results folder the 
 # OPTIONAL If you have AWS ECR
 
 # Deploy it on Kubernetes
+
+When deploying in k8s there some steps to be followed
+
+1. The docker container has to be created and reachable from where you will be deploying your cluster. In our case the cluster will be in Amazon EKS, and the containers are available on Amazon ECR which is a repository for AWS
+2. When creating your pod
 
 
 
