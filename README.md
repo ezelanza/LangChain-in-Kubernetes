@@ -5,7 +5,7 @@ This repository is intented to share a Kubernetes implementation for a RAG chatb
 2. The vector database used is FAISS. 
 3. It was built using LangChain 
 4. The front end is a REACT application
-![image](LangChain-in-Kubernetes/Images/diagram.png) 
+![image](Images/diagram.png) 
 
 This is a reference implementation of a question answering for a RAG implementation using Langchain
 
